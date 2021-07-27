@@ -47,3 +47,27 @@ WHERE
 ORDER BY 
 	`movies`.`release_date` ASC
 ```
+
+## Ajouter un film : 
+```
+INSERT INTO movies (title, release_date, duration, director) VALUES 
+('Black Widow','2021-07-07','02:14:00','Cate Shortland')
+```
+
+## Ajouter un acteur : 
+```
+INSERT INTO actors ( last_name, first_name, birth_date) VALUES
+('Bettany','Paul','1971-05-27')
+```
+## Modifier un film : 
+```
+UPDATE `movies`
+SET `title` = "Iron Man 4"
+WHERE `movies`.`title` = "Iron Man"
+```
+
+## Supprimer un acteur
+```
+DELETE FROM `actors`
+WHERE `actors`.`last_name` = "Bettany" AND `actors`.`first_name` = "Paul"
+```

@@ -75,6 +75,6 @@ WHERE `actors`.`last_name` = "Bettany" AND `actors`.`first_name` = "Paul"
 ## Afficher les 3 derniers acteurs ajoutés
 ```
 SELECT *
-FROM actors
-ORDER BY id DESC LIMIT 0,3
+FROM `actors`
+ORDER BY `id` DESC LIMIT 0,3
 ```

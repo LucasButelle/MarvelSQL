@@ -12,6 +12,22 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+-- Listage de la structure de la base pour mcu-butl
+CREATE DATABASE IF NOT EXISTS `mcu-butl` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `mcu-butl`;
+
+-- Listage de la structure de la table mcu-butl. actors
+CREATE TABLE IF NOT EXISTS `actors` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `last_name` varchar(80) CHARACTER SET utf8 NOT NULL,
+  `first_name` varchar(80) CHARACTER SET utf8 NOT NULL,
+  `birth_date` date NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=latin1;
+
 -- Listage des données de la table mcu-butl.actors : ~64 rows (environ)
 /*!40000 ALTER TABLE `actors` DISABLE KEYS */;
 INSERT INTO `actors` (`id`, `last_name`, `first_name`, `birth_date`, `created_at`, `modified_at`) VALUES
@@ -81,7 +97,17 @@ INSERT INTO `actors` (`id`, `last_name`, `first_name`, `birth_date`, `created_at
 	(64, 'Gyllenhaal', 'Jake', '1980-12-19', '2021-07-26 13:40:38', NULL);
 /*!40000 ALTER TABLE `actors` ENABLE KEYS */;
 
--- Listage des données de la table mcu-butl.actors_movies : ~209 rows (environ)
+-- Listage de la structure de la table mcu-butl. actors_movies
+CREATE TABLE IF NOT EXISTS `actors_movies` (
+  `id_actor` int(11) NOT NULL,
+  `id_movie` int(11) NOT NULL,
+  UNIQUE KEY `id_actor_id_movie` (`id_actor`,`id_movie`),
+  KEY `id_movie_movies` (`id_movie`),
+  CONSTRAINT `id_actor_actors` FOREIGN KEY (`id_actor`) REFERENCES `actors` (`id`),
+  CONSTRAINT `id_movie_movies` FOREIGN KEY (`id_movie`) REFERENCES `movies` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Listage des données de la table mcu-butl.actors_movies : ~208 rows (environ)
 /*!40000 ALTER TABLE `actors_movies` DISABLE KEYS */;
 INSERT INTO `actors_movies` (`id_actor`, `id_movie`) VALUES
 	(1, 1),
@@ -256,7 +282,6 @@ INSERT INTO `actors_movies` (`id_actor`, `id_movie`) VALUES
 	(3, 18),
 	(4, 18),
 	(26, 18),
-	(48, 18),
 	(5, 19),
 	(6, 19),
 	(7, 19),
@@ -294,6 +319,18 @@ INSERT INTO `actors_movies` (`id_actor`, `id_movie`) VALUES
 	(33, 23),
 	(48, 23);
 /*!40000 ALTER TABLE `actors_movies` ENABLE KEYS */;
+
+-- Listage de la structure de la table mcu-butl. movies
+CREATE TABLE IF NOT EXISTS `movies` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(80) NOT NULL,
+  `release_date` date NOT NULL,
+  `duration` time DEFAULT NULL,
+  `director` varchar(80) DEFAULT NULL,
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
 -- Listage des données de la table mcu-butl.movies : ~23 rows (environ)
 /*!40000 ALTER TABLE `movies` DISABLE KEYS */;

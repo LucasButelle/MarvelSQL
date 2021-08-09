@@ -82,7 +82,7 @@ INSERT INTO `actors` (`id`, `last_name`, `first_name`, `birth_date`, `created_at
 	(49, 'Thompson', 'Tessa', '1983-10-03', '2021-07-26 13:40:38', NULL),
 	(50, 'Blanchett', 'Cate', '1969-05-14', '2021-07-26 13:40:38', NULL),
 	(51, 'Boseman', 'Chadwick', '1976-08-28', '2021-07-26 13:40:38', NULL),
-	(52, 'Nyong\'o', 'Lupita', '1983-03-01', '2021-07-26 13:40:38', NULL),
+	(52, 'Nyong\'o'', 'Lupita', '1983-03-01', '2021-07-26 13:40:38', NULL),
 	(53, 'Gurira', 'Danai', '1978-02-14', '2021-07-26 13:40:38', NULL),
 	(54, 'Freeman', 'Martin', '1971-09-08', '2021-07-26 13:40:38', NULL),
 	(55, 'B. Jordan', 'Michael', '1987-02-09', '2021-07-26 13:40:38', NULL),

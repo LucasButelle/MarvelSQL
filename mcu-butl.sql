@@ -20,13 +20,13 @@ USE `mcu-butl`;
 -- Listage de la structure de la table mcu-butl. actors
 CREATE TABLE IF NOT EXISTS `actors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `last_name` varchar(80) CHARACTER SET utf8 NOT NULL,
-  `first_name` varchar(80) CHARACTER SET utf8 NOT NULL,
+  `last_name` varchar(80) NOT NULL,
+  `first_name` varchar(80) NOT NULL,
   `birth_date` date NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `modified_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8;
 
 -- Listage des données de la table mcu-butl.actors : ~64 rows (environ)
 /*!40000 ALTER TABLE `actors` DISABLE KEYS */;
@@ -82,7 +82,7 @@ INSERT INTO `actors` (`id`, `last_name`, `first_name`, `birth_date`, `created_at
 	(49, 'Thompson', 'Tessa', '1983-10-03', '2021-07-26 13:40:38', NULL),
 	(50, 'Blanchett', 'Cate', '1969-05-14', '2021-07-26 13:40:38', NULL),
 	(51, 'Boseman', 'Chadwick', '1976-08-28', '2021-07-26 13:40:38', NULL),
-	(52, 'Nyong\'o'', 'Lupita', '1983-03-01', '2021-07-26 13:40:38', NULL),
+	(52, 'Nyong\'o', 'Lupita', '1983-03-01', '2021-07-26 13:40:38', NULL),
 	(53, 'Gurira', 'Danai', '1978-02-14', '2021-07-26 13:40:38', NULL),
 	(54, 'Freeman', 'Martin', '1971-09-08', '2021-07-26 13:40:38', NULL),
 	(55, 'B. Jordan', 'Michael', '1987-02-09', '2021-07-26 13:40:38', NULL),
